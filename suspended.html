@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #080c14;
+      color: #b3c1d8;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      width: 420px;
+      padding: 40px 36px 36px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.2);
+      font-size: 11px;
+      color: #4ade80;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.08em;
+      margin-bottom: 28px;
+    }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .site-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+    .site-url {
+      font-size: 12px;
+      font-family: 'DM Mono', monospace;
+      color: #7f93b1;
+      margin-bottom: 28px;
+      word-break: break-all;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+    .restore-btn {
+      background: #6366f1;
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.1s;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .restore-btn:hover { background: #4f46e5; transform: translateY(-1px); }
+    .restore-btn:active { transform: translateY(0); }
+    .warning {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: rgba(245,200,66,0.06);
+      border: 1px solid rgba(245,200,66,0.18);
+      text-align: left;
+    }
+    .warning-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+    .warning-text { font-size: 12px; color: #c9a84c; line-height: 1.5; }
+    .warning-text strong { color: #f5c842; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge"><span class="dot"></span> SLEEPING MODE | RAM SAVED</div>
+    <div class="site-title" id="site-title">Loading...</div>
+    <div class="site-url" id="site-url"></div>
+    <button class="restore-btn" id="restore-btn">Wake This Tab Up</button>
+    <div class="warning">
+      <span class="warning-icon">!</span>
+      <span class="warning-text">
+        <strong>Please leave this tab open for easy restore.</strong> Your tab is just taking a tiny nap to save memory. Wake it up here anytime, or from TabWise.
+      </span>
+    </div>
+  </div>
+  <script type="module" src="./src/suspended.js"></script>
+</body>
+</html>

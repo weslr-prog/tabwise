@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Extension build output
+dist/
+
+# Local payment configuration
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+*.zip
+
+# OS files
+.DS_Store
